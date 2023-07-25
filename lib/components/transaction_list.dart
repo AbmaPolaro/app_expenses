@@ -57,7 +57,6 @@ class TransactionList extends StatelessWidget {
                         //serão 2 casas após o ponto
                         'R\$ ${tr.value.toStringAsFixed(2)}',
                         style: TextStyle(
-                          fontWeight: FontWeight.bold,
                           fontSize: 20,
                           color: Theme.of(context).colorScheme.primary,
                         ),

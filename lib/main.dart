@@ -21,19 +21,20 @@ class ExpensesApp extends StatelessWidget {
       home: const MyHomePage(),
       theme: tema.copyWith(
         colorScheme: tema.colorScheme.copyWith(
-          primary: Colors.purple,
-          secondary: Colors.amber,
+          primary: Colors.red,
+          secondary: Colors.grey,
         ),
         textTheme: tema.textTheme.copyWith(
           titleLarge: const TextStyle(
-            fontFamily: 'Montserrat',
+            fontFamily: 'Montserrat-Black',
             fontSize: 18,
             color: Colors.black,
           ),
         ),
         appBarTheme: const AppBarTheme(
+          centerTitle: true,
           titleTextStyle: TextStyle(
-            fontFamily: 'Montserrat',
+            fontFamily: 'Montserrat-Black',
             fontSize: 20,
           ),
         ),
@@ -66,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Transaction(
       id: 't2',
       title: 'Conta de Água',
-      value: 211.30,
+      value: 200.30,
       date: DateTime.now().subtract(const Duration(days: 4)),
     ),
   ];
@@ -109,11 +110,19 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Despesas Pessoais'),
+        title: const Text(
+          'Despesas Pessoais',
+          style: TextStyle(
+            fontSize: 22,
+          ),
+        ),
         actions: [
           IconButton(
             onPressed: () => _openTransactionFormModal(context),
-            icon: const Icon(Icons.add),
+            icon: const Icon(
+              Icons.monetization_on_outlined,
+              size: 30,
+            ),
           )
         ],
       ),
@@ -129,7 +138,11 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _openTransactionFormModal(context),
-        child: const Icon(Icons.add),
+        child: const Icon(
+          Icons.monetization_on_outlined,
+          color: Colors.white,
+          size: 50,
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
